@@ -366,7 +366,7 @@ export default function Home() {
       </div>
     );
   };
-
+ 
   // Quiz selection screen
   if (!selectedQuiz) {
     return (
