@@ -15,6 +15,239 @@ export interface Quiz {
 
 export const quizzes: Quiz[] = [
   {
+    id: "practiceProblems",
+    title: "Practice Problems",
+    description:
+      "Code tracing, error detection, hashing, and time complexity exercises",
+    questions: [
+      {
+        id: 1,
+        question:
+          "What will be the output of this code?\n\n#include <iostream>\nusing namespace std;\n\nint main() {\n  int arr[] = {1, 2, 3, 4, 5};\n  int* ptr = arr;\n  *(ptr + 3) = 9;\n  cout << arr[3] << ' ' << *(ptr + 2);\n  return 0;\n}",
+        type: "single",
+        options: ["9 3", "4 3", "9 9", "4 9", "3 9"],
+        correctAnswer: "9 3",
+      },
+      {
+        id: 2,
+        question:
+          "What will be the output of this code?\n\n#include <iostream>\nusing namespace std;\n\nint main() {\n  int n = 5;\n  int sum = 0;\n  for (int i = 1; i <= n; i++) {\n    for (int j = 1; j <= i; j++) {\n      sum++;\n    }\n  }\n  cout << sum;\n  return 0;\n}",
+        type: "single",
+        options: ["5", "15", "25", "10", "20"],
+        correctAnswer: "15",
+      },
+      {
+        id: 3,
+        question:
+          "What error exists in this hash table implementation?\n\nclass HashTable {\nprivate:\n  static const int TABLE_SIZE = 10;\n  list<int> table[TABLE_SIZE];\n\npublic:\n  int hashFunction(int key) {\n    return key % TABLE_SIZE;\n  }\n\n  void insertItem(int key) {\n    int index = hashFunction(key);\n    table[index].push_back(key);\n  }\n\n  void deleteItem(int key) {\n    int index = hashFunction(key);\n    table[index].remove(key);\n  }\n\n  bool searchItem(int key) {\n    int index = hashFunction(key);\n    for (int x : table[index]) {\n      if (x == key)\n        return true;\n    }\n    return false;\n  }\n};",
+        type: "single",
+        options: [
+          "The hashFunction is not using a prime number for modulo",
+          "The table size is too small for efficient hashing",
+          "The searchItem function should return the index, not a boolean",
+          "The deleteItem function doesn't check if the key exists before removing it",
+          "There is no error in this implementation",
+        ],
+        correctAnswer:
+          "The hashFunction is not using a prime number for modulo",
+      },
+      {
+        id: 4,
+        question:
+          'What will be the output of this code?\n\n#include <iostream>\n#include <stack>\nusing namespace std;\n\nint main() {\n  stack<int> s;\n  s.push(1);\n  s.push(2);\n  s.push(3);\n  s.pop();\n  s.push(4);\n  s.push(5);\n  s.pop();\n  \n  while (!s.empty()) {\n    cout << s.top() << " ";\n    s.pop();\n  }\n  \n  return 0;\n}',
+        type: "single",
+        options: ["1 2 3 4", "4 2 1", "5 4 3 2 1", "1 2 4", "4 3 2 1"],
+        correctAnswer: "4 2 1",
+      },
+      {
+        id: 5,
+        question:
+          "What is the time complexity of the following function?\n\nint countElements(vector<int>& arr, int target) {\n  int count = 0;\n  for (int i = 0; i < arr.size(); i++) {\n    for (int j = i + 1; j < arr.size(); j++) {\n      if (arr[i] + arr[j] == target) {\n        count++;\n      }\n    }\n  }\n  return count;\n}",
+        type: "single",
+        options: ["O(n)", "O(n log n)", "O(n²)", "O(2n)", "O(n³)"],
+        correctAnswer: "O(n²)",
+      },
+      {
+        id: 6,
+        question:
+          "What will be the output of this code?\n\n#include <iostream>\n#include <queue>\nusing namespace std;\n\nint main() {\n  queue<char> q;\n  q.push('A');\n  q.push('B');\n  q.push('C');\n  q.pop();\n  q.push('D');\n  q.push('E');\n  q.pop();\n  \n  while (!q.empty()) {\n    cout << q.front();\n    q.pop();\n  }\n  \n  return 0;\n}",
+        type: "single",
+        options: ["ABCDE", "CDE", "ABC", "EDCBA", "BCDE"],
+        correctAnswer: "CDE",
+      },
+      {
+        id: 7,
+        question:
+          "What is wrong with this code for a binary search?\n\nint binarySearch(int arr[], int size, int target) {\n  int left = 0;\n  int right = size;\n  \n  while (left <= right) {\n    int mid = (left + right) / 2;\n    \n    if (arr[mid] == target)\n      return mid;\n    \n    if (arr[mid] < target)\n      left = mid + 1;\n    else\n      right = mid - 1;\n  }\n  \n  return -1;\n}",
+        type: "single",
+        options: [
+          "The calculation of mid can cause integer overflow for large arrays",
+          "The initial value of right should be size-1, not size",
+          "The while condition should be left < right, not left <= right",
+          "The right = mid - 1 statement should be right = mid",
+          "The left = mid + 1 statement should be left = mid",
+        ],
+        correctAnswer: "The initial value of right should be size-1, not size",
+      },
+      {
+        id: 8,
+        question:
+          "What is the time complexity of inserting a node at the beginning of a singly linked list?",
+        type: "single",
+        options: ["O(1)", "O(n)", "O(log n)", "O(n log n)", "O(n²)"],
+        correctAnswer: "O(1)",
+      },
+      {
+        id: 9,
+        question:
+          'What will be the output of this code?\n\n#include <iostream>\nusing namespace std;\n\nint main() {\n  int array[5] = {10, 20, 30, 40, 50};\n  int *p = array;\n  \n  cout << *p++ << " ";\n  cout << *p << " ";\n  cout << *(p+2) << " ";\n  p = array + 4;\n  cout << *p-- << " ";\n  cout << *p << " ";\n  \n  return 0;\n}',
+        type: "single",
+        options: [
+          "10 20 40 50 40",
+          "10 20 30 50 40",
+          "10 50 40 40 50",
+          "10 20 40 40 30",
+          "20 30 50 50 40",
+        ],
+        correctAnswer: "10 20 40 50 40",
+      },
+      {
+        id: 10,
+        question:
+          "Which of the following hash functions for strings would provide the most uniform distribution for table slots?",
+        type: "single",
+        options: [
+          "Return the sum of ASCII values of all characters",
+          "Return the ASCII value of the first character",
+          "Return the product of ASCII values of all characters",
+          "Return the sum of ASCII values multiplied by powers of a prime number (polynomial rolling hash)",
+          "Return the ASCII value of the last character",
+        ],
+        correctAnswer:
+          "Return the sum of ASCII values multiplied by powers of a prime number (polynomial rolling hash)",
+      },
+      {
+        id: 11,
+        question:
+          'What will be the output of this code?\n\n#include <iostream>\nusing namespace std;\n\nvoid modify(int arr[], int size) {\n  for (int i = 0; i < size; i++) {\n    arr[i] = arr[i] * 2;\n  }\n  size = size - 1;\n}\n\nint main() {\n  int numbers[] = {1, 2, 3, 4, 5};\n  int size = 5;\n  \n  modify(numbers, size);\n  \n  cout << "Size: " << size << endl;\n  for (int i = 0; i < size; i++) {\n    cout << numbers[i] << " ";\n  }\n  \n  return 0;\n}',
+        type: "single",
+        options: [
+          "Size: 4\n2 4 6 8",
+          "Size: 5\n2 4 6 8 10",
+          "Size: 4\n1 2 3 4",
+          "Size: 5\n1 2 3 4 5",
+          "Size: 4\n2 4 6 8 10",
+        ],
+        correctAnswer: "Size: 5\n2 4 6 8 10",
+      },
+      {
+        id: 12,
+        question:
+          "What is the error in this bubble sort implementation?\n\nvoid bubbleSort(int arr[], int n) {\n  for (int i = 0; i < n - 1; i++) {\n    for (int j = 0; j < n - 1; j++) {\n      if (arr[j] > arr[j + 1]) {\n        int temp = arr[j];\n        arr[j] = arr[j + 1];\n        arr[j + 1] = temp;\n      }\n    }\n  }\n}",
+        type: "single",
+        options: [
+          "The swap implementation is incorrect",
+          "The inner loop should run for (n-i-1) iterations instead of (n-1)",
+          "The outer loop should run for n iterations instead of (n-1)",
+          "The if condition should be arr[j] < arr[j+1] for ascending order",
+          "There is no error in this implementation",
+        ],
+        correctAnswer:
+          "The inner loop should run for (n-i-1) iterations instead of (n-1)",
+      },
+      {
+        id: 13,
+        question:
+          "What is the load factor of a hash table with 120 elements and 200 slots?",
+        type: "single",
+        options: ["0.6", "1.67", "0.4", "1.2", "2.0"],
+        correctAnswer: "0.6",
+      },
+      {
+        id: 14,
+        question:
+          "What is the error in this function that is supposed to find the maximum value in an array?\n\nint findMax(int arr[], int size) {\n  int max = 0;\n  \n  for (int i = 0; i < size; i++) {\n    if (arr[i] > max) {\n      max = arr[i];\n    }\n  }\n  \n  return max;\n}",
+        type: "single",
+        options: [
+          "The loop should start from index 1, not 0",
+          "The max variable should be initialized to arr[0], not 0",
+          "The function returns the index of the maximum value, not the value itself",
+          "The loop condition should be i <= size instead of i < size",
+          "There is no error in this implementation",
+        ],
+        correctAnswer:
+          "The max variable should be initialized to arr[0], not 0",
+      },
+      {
+        id: 15,
+        question:
+          "SELECT ALL that represent valid implementations of a hash table to handle collisions:",
+        type: "multiple",
+        options: [
+          "Chaining (linked lists at each slot)",
+          "Linear probing",
+          "Quadratic probing",
+          "Double hashing",
+          "Binary search trees",
+        ],
+        correctAnswer: [
+          "Chaining (linked lists at each slot)",
+          "Linear probing",
+          "Quadratic probing",
+          "Double hashing",
+          "Binary search trees",
+        ],
+      },
+      {
+        id: 16,
+        question:
+          "What time complexity does hash table search have in the average case?",
+        type: "single",
+        options: ["O(1)", "O(n)", "O(log n)", "O(n log n)", "O(n²)"],
+        correctAnswer: "O(1)",
+      },
+      {
+        id: 17,
+        question:
+          "What will be the output of this code?\n\n#include <iostream>\nusing namespace std;\n\nint main() {\n  int count = 0;\n  int n = 64;\n  \n  while (n > 0) {\n    n = n / 2;\n    count++;\n  }\n  \n  cout << count;\n  return 0;\n}",
+        type: "single",
+        options: ["6", "7", "8", "5", "32"],
+        correctAnswer: "7",
+      },
+      {
+        id: 18,
+        question:
+          "Which of the following will cause a time complexity of O(n²) in a hash table with n elements?",
+        type: "single",
+        options: [
+          "Using a hash function that distributes keys uniformly",
+          "Having a load factor of 0.5",
+          "Using linear probing with a poor hash function causing clustering",
+          "Using chaining with linked lists",
+          "Resizing the hash table when the load factor exceeds 0.75",
+        ],
+        correctAnswer:
+          "Using linear probing with a poor hash function causing clustering",
+      },
+      {
+        id: 19,
+        question:
+          'What will be the output of this code?\n\n#include <iostream>\n#include <deque>\nusing namespace std;\n\nint main() {\n  deque<int> dq;\n  dq.push_back(10);\n  dq.push_front(20);\n  dq.push_back(30);\n  dq.pop_front();\n  dq.push_front(40);\n  \n  cout << dq.front() << " " << dq.back() << " " << dq.size();\n  return 0;\n}',
+        type: "single",
+        options: ["40 30 3", "10 30 3", "20 30 3", "40 10 3", "10 40 3"],
+        correctAnswer: "40 30 3",
+      },
+      {
+        id: 20,
+        question:
+          "What is the worst-case time complexity for finding an element in a singly linked list with n nodes?",
+        type: "single",
+        options: ["O(1)", "O(n)", "O(log n)", "O(n log n)", "O(n²)"],
+        correctAnswer: "O(n)",
+      },
+    ],
+  },
+  {
     id: "week1",
     title: "Week 1: CS46 Data Structures",
     description: "Basic concepts of Big O notation and data structures",
