@@ -366,7 +366,7 @@ export default function Home() {
       </div>
     );
   };
- 
+
   // Quiz selection screen
   if (!selectedQuiz) {
     return (
@@ -487,7 +487,7 @@ export default function Home() {
   // Quiz questions screen
   return (
     <main className="h-screen overflow-hidden bg-slate-50 flex flex-col py-4 px-4">
-      <div className="max-w-4xl mx-auto w-full flex flex-col h-full">
+      <div className="max-w-6xl mx-auto w-full flex flex-col h-full">
         <h1 className="text-3xl font-bold text-center text-slate-800 mb-3">
           {selectedQuiz.title}
         </h1>
@@ -500,65 +500,74 @@ export default function Home() {
 
         <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-3 border border-gray-100 flex-1 flex flex-col">
           <div className="p-4 sm:p-6 flex flex-col flex-1 overflow-hidden">
-            <div className="mb-4">
-              <h2 className="text-xl font-bold text-slate-800 mb-2">
-                {currentQuestion.type === "multiple"
-                  ? "Select all that apply:"
-                  : currentQuestion.type === "ranking"
-                  ? "Rank the options:"
-                  : "Select one:"}
-              </h2>
-              <div className="text-lg text-slate-700 whitespace-pre-wrap leading-relaxed max-h-[25vh] overflow-y-auto pr-2">
-                {formatQuestionText(currentQuestion.question)}
+            <div className="flex flex-1 gap-6 overflow-hidden">
+              {/* Question Section - Left Side */}
+              <div className="w-1/2 flex flex-col overflow-hidden">
+                <h2 className="text-xl font-bold text-slate-800 mb-2">
+                  {currentQuestion.type === "multiple"
+                    ? "Select all that apply:"
+                    : currentQuestion.type === "ranking"
+                    ? "Rank the options:"
+                    : "Select one:"}
+                </h2>
+                <div className="text-lg text-slate-700 whitespace-pre-wrap leading-relaxed overflow-y-auto pr-2 flex-1">
+                  {formatQuestionText(currentQuestion.question)}
+                </div>
               </div>
-            </div>
 
-            <div className="flex-1 overflow-y-auto">
-              {currentQuestion.type === "ranking" ? (
-                renderRankingQuestion()
-              ) : (
-                <div className="space-y-2 mb-4">
-                  {currentQuestion.options.map((option, index) => (
-                    <div
-                      key={index}
-                      onClick={() => handleOptionSelect(option)}
-                      className={`p-3 border-2 rounded-lg cursor-pointer transition-all ${
-                        selectedOptions.includes(option)
-                          ? "border-blue-500 bg-blue-50"
-                          : "border-gray-200 hover:border-blue-300"
-                      } ${
-                        showExplanation &&
-                        ((Array.isArray(currentQuestion.correctAnswer) &&
-                          currentQuestion.correctAnswer.includes(option)) ||
-                          currentQuestion.correctAnswer === option)
-                          ? "border-green-500 bg-green-50"
-                          : ""
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
+              {/* Answer Options Section - Right Side */}
+              <div className="w-1/2 flex flex-col overflow-hidden">
+                <h2 className="text-xl font-bold text-slate-800 mb-2">
+                  Options:
+                </h2>
+                <div className="overflow-y-auto flex-1">
+                  {currentQuestion.type === "ranking" ? (
+                    renderRankingQuestion()
+                  ) : (
+                    <div className="space-y-2 mb-4">
+                      {currentQuestion.options.map((option, index) => (
                         <div
-                          className={`w-6 h-6 flex-shrink-0 rounded-full border-2 flex items-center justify-center ${
+                          key={index}
+                          onClick={() => handleOptionSelect(option)}
+                          className={`p-3 border-2 rounded-lg cursor-pointer transition-all ${
                             selectedOptions.includes(option)
-                              ? "border-blue-500 bg-blue-500 text-white"
-                              : "border-gray-400 bg-white"
+                              ? "border-blue-500 bg-blue-50"
+                              : "border-gray-200 hover:border-blue-300"
+                          } ${
+                            showExplanation &&
+                            ((Array.isArray(currentQuestion.correctAnswer) &&
+                              currentQuestion.correctAnswer.includes(option)) ||
+                              currentQuestion.correctAnswer === option)
+                              ? "border-green-500 bg-green-50"
+                              : ""
                           }`}
                         >
-                          {currentQuestion.type === "multiple"
-                            ? selectedOptions.includes(option)
-                              ? "✓"
-                              : ""
-                            : selectedOptions.includes(option)
-                            ? "•"
-                            : ""}
+                          <div className="flex items-center gap-3">
+                            <div
+                              className={`w-6 h-6 flex-shrink-0 rounded-full border-2 flex items-center justify-center ${
+                                selectedOptions.includes(option)
+                                  ? "border-blue-500 bg-blue-500 text-white"
+                                  : "border-gray-400 bg-white"
+                              }`}
+                            >
+                              {currentQuestion.type === "multiple"
+                                ? selectedOptions.includes(option)
+                                  ? "✓"
+                                  : ""
+                                : selectedOptions.includes(option)
+                                ? "•"
+                                : ""}
+                            </div>
+                            <div className="text-base font-medium text-slate-700">
+                              {formatOptionText(option)}
+                            </div>
+                          </div>
                         </div>
-                        <div className="text-base font-medium text-slate-700">
-                          {formatOptionText(option)}
-                        </div>
-                      </div>
+                      ))}
                     </div>
-                  ))}
+                  )}
                 </div>
-              )}
+              </div>
             </div>
 
             {!showExplanation ? (
@@ -570,7 +579,7 @@ export default function Home() {
                     ? selectedOptions.length === 0
                     : rankedOptions.length !== currentQuestion.options.length
                 }
-                className={`w-full py-3 text-white font-bold text-base rounded-lg shadow transition-all ${
+                className={`w-full mt-3 py-3 text-white font-bold text-base rounded-lg shadow transition-all ${
                   currentQuestion.type === "single" ||
                   currentQuestion.type === "multiple"
                     ? selectedOptions.length === 0
