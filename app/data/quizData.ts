@@ -1132,4 +1132,1008 @@ export const quizzes: Quiz[] = [
       },
     ],
   },
+  {
+    id: "week6",
+    title: "Week 6: Binary Search Trees and AVL Trees",
+    description: "Traversals, balancing, and operations on BSTs and AVL trees",
+    questions: [
+      {
+        id: 1,
+        question:
+          "In which traversal does the node visitation order follow the pattern 'left subtree - right subtree - root'?",
+        type: "single",
+        options: [
+          "Pre-order traversal",
+          "In-order traversal",
+          "Post-order traversal",
+          "none of the other choices",
+        ],
+        correctAnswer: "Post-order traversal",
+      },
+      {
+        id: 2,
+        question:
+          "In which traversal does the node visitation order follow the pattern 'left subtree - root - right subtree'?",
+        type: "single",
+        options: [
+          "Post-order traversal",
+          "none of the other choices",
+          "In-order traversal",
+          "Pre-order traversal",
+        ],
+        correctAnswer: "In-order traversal",
+      },
+      {
+        id: 3,
+        question:
+          "What is the worst-case time complexity for inserting a node into a simple unbalanced binary search tree with n nodes?",
+        type: "single",
+        options: ["O(2^n)", "O(n^2)", "O(log n)", "O(n)"],
+        correctAnswer: "O(n)",
+      },
+      {
+        id: 4,
+        question:
+          "What is a common cause of a binary search tree becoming unbalanced and degrading in performance?",
+        type: "single",
+        options: [
+          "Inserting new nodes at random positions in the tree",
+          "Inserting nodes in a pre-order traversal instead of an in-order traversal",
+          "none of the other choices",
+          "Inserting nodes with values that are already present in the tree",
+          "Inserting nodes with values that are sorted in ascending or descending order",
+        ],
+        correctAnswer:
+          "Inserting nodes with values that are sorted in ascending or descending order",
+      },
+      {
+        id: 5,
+        question:
+          "What is the worst-case time complexity for finding a node in an AVL self-balancing binary search tree with n nodes?",
+        type: "single",
+        options: [
+          "O(log n)",
+          "O(2^n)",
+          "O(n^2)",
+          "O(n)",
+          "none of the other choices",
+        ],
+        correctAnswer: "O(log n)",
+      },
+      {
+        id: 6,
+        question:
+          "What is a common technique for improving the performance of a binary search tree that has become unbalanced?",
+        type: "single",
+        options: [
+          "Rebuilding the tree from scratch",
+          "none of the other choices",
+          "Adding more nodes with values that are already present in the tree",
+          "Removing nodes with values that are already present in the tree",
+          "Rotating a group of nodes in the tree to balance it out",
+        ],
+        correctAnswer:
+          "Rotating a group of nodes in the tree to balance it out",
+      },
+      {
+        id: 7,
+        question:
+          "When removing a node with two children in a binary search tree, what is the standard approach for replacing it?",
+        type: "single",
+        options: [
+          "Remove the node and its two children, and add the children to the parent node's children list",
+          "none of the other choices",
+          "Replace the node with its in-order successor, and recursively remove the successor node from its original position",
+          "Replace the node with its left child, and attach its right subtree as the left child's right subtree",
+          "Replace the node with its right child, and attach its left subtree as the right child's left subtree",
+        ],
+        correctAnswer:
+          "Replace the node with its in-order successor, and recursively remove the successor node from its original position",
+      },
+      {
+        id: 8,
+        question:
+          "Which traversal is commonly used for evaluating arithmetic expressions represented by binary trees?",
+        type: "single",
+        options: [
+          "none of the other choices",
+          "Post-order traversal",
+          "In-order traversal",
+          "Pre-order traversal",
+          "Level-order traversal",
+        ],
+        correctAnswer: "Post-order traversal",
+      },
+      {
+        id: 9,
+        question:
+          "When inserting a new node into a binary search tree, where should the new node be placed?",
+        type: "single",
+        options: [
+          "none of the other choices",
+          "To the right of a node with a smaller value, and to the left of a node with a larger value",
+          "At the leftmost empty spot in the tree",
+          "Always as the root of the tree",
+          "To the left of a node with a larger key, and to the right of a node with a smaller key",
+        ],
+        correctAnswer:
+          "To the left of a node with a larger key, and to the right of a node with a smaller key",
+      },
+      {
+        id: 10,
+        question:
+          "What is the height difference limit between the left and right subtrees of any node in an AVL tree?",
+        type: "single",
+        options: ["0", "2", "3", "none of the other choices", "1"],
+        correctAnswer: "1",
+      },
+      {
+        id: 11,
+        question:
+          "What operation is used to rebalance an AVL tree after an insertion or deletion operation?",
+        type: "multiple",
+        options: [
+          "Double left rotation",
+          "Double right rotation",
+          "none of the other choices",
+          "Right rotation",
+          "Left rotation",
+        ],
+        correctAnswer: [
+          "Double left rotation",
+          "Double right rotation",
+          "Right rotation",
+          "Left rotation",
+        ],
+      },
+      {
+        id: 12,
+        question:
+          "Which traversal is commonly used for calculating the height of a binary tree?",
+        type: "single",
+        options: [
+          "none of the other choices",
+          "Post-order traversal",
+          "In-order traversal",
+          "Pre-order traversal",
+          "Level-order traversal",
+        ],
+        correctAnswer: "Post-order traversal",
+      },
+      {
+        id: 13,
+        question:
+          "In which traversal does the node visitation order follow the pattern 'root - left subtree - right subtree'?",
+        type: "single",
+        options: [
+          "none of the other choices",
+          "Pre-order traversal",
+          "In-order traversal",
+          "Post-order traversal",
+        ],
+        correctAnswer: "Pre-order traversal",
+      },
+      {
+        id: 14,
+        question:
+          "In a binary search tree, how is a node found with a specific key?",
+        type: "single",
+        options: [
+          "none of the other choices",
+          "Start at the root and traverse the tree in a post-order traversal until the node is found",
+          "Start at the root and traverse the tree in a pre-order traversal until the node is found",
+          "Start at the root and traverse the tree in a random order until the node is found",
+          "Start at the root and traverse the tree down a path using less than and greater than to compare key with a node's key until the node is found",
+        ],
+        correctAnswer:
+          "Start at the root and traverse the tree down a path using less than and greater than to compare key with a node's key until the node is found",
+      },
+      {
+        id: 15,
+        question:
+          "What is the worst-case time complexity for inserting a node into a self-balancing binary tree with n nodes?",
+        type: "single",
+        options: [
+          "O(n)",
+          "none of the other choices",
+          "O(2^n)",
+          "O(n^2)",
+          "O(log n)",
+        ],
+        correctAnswer: "O(log n)",
+      },
+    ],
+  },
+  {
+    id: "week7",
+    title: "Week 7: Sorting Algorithms",
+    description: "Sorting algorithms, properties, and time complexities.",
+    questions: [
+      {
+        id: 1,
+        question: "Quick Sort has a worst-case time complexity of O(n²) when:",
+        type: "single",
+        options: [
+          "The input array is very large",
+          "The input array is randomly shuffled",
+          "none of the other choices",
+          "The pivot element chosen during partitioning always divides the array into two sub-arrays of extremely uneven size",
+          "The input array contains many duplicate elements",
+        ],
+        correctAnswer:
+          "The pivot element chosen during partitioning always divides the array into two sub-arrays of extremely uneven size",
+      },
+      {
+        id: 2,
+        question:
+          "What is an advantage of Quick Sort over other sorting algorithms?",
+        type: "single",
+        options: [
+          "It is the fastest general purpose sort in practice",
+          "It is more memory efficient than Heap Sort",
+          "It is a stable sorting algorithm",
+          "It is easy to implement and understand",
+          "none of the other choices",
+        ],
+        correctAnswer: "It is the fastest general purpose sort in practice",
+      },
+      {
+        id: 3,
+        question: "Merge Sort is a sorting algorithm that:",
+        type: "single",
+        options: [
+          "Divides the input array into two nearly equal subarrays, recursively sorts them, and then merges the sorted subarrays to produce a sorted output",
+          "none of the other choices",
+          "Uses extra space of O(n²)",
+          "Is an in-place sorting algorithm",
+        ],
+        correctAnswer:
+          "Divides the input array into two nearly equal subarrays, recursively sorts them, and then merges the sorted subarrays to produce a sorted output",
+      },
+      {
+        id: 4,
+        question:
+          "One reason why Quick Sort can have a variable time complexity is that:",
+        type: "single",
+        options: [
+          "none of the other choices",
+          "It has a non-deterministic runtime behavior that depends on the hardware and software environment",
+          "It depends on the initial order of the input array and the pivot selection strategy",
+          "It is an adaptive sorting algorithm that changes its strategy based on the input array",
+        ],
+        correctAnswer:
+          "It depends on the initial order of the input array and the pivot selection strategy",
+      },
+      {
+        id: 5,
+        question: "Selection Sort is a sorting algorithm that:",
+        type: "single",
+        options: [
+          "Repeatedly finds the smallest element in the unsorted portion of the array and moves it to the end of the sorted portion",
+          "Is an in-place sorting algorithm",
+          "none of the other choices",
+          "Always has a worst-case time complexity of O(n log n)",
+          "Is a stable sorting algorithm",
+        ],
+        correctAnswer:
+          "Repeatedly finds the smallest element in the unsorted portion of the array and moves it to the end of the sorted portion",
+      },
+      {
+        id: 6,
+        question: "Shell Sort is particularly effective when:",
+        type: "single",
+        options: [
+          "The input array is partially sorted or nearly sorted",
+          "The input array contains a lot of duplicate elements",
+          "The input array is already sorted",
+          "The input array is very large",
+          "none of the other choices",
+        ],
+        correctAnswer: "The input array is partially sorted or nearly sorted",
+      },
+      {
+        id: 7,
+        question:
+          "To mitigate the risk of Quick Sort having a worst-case time complexity of O(n²), one can:",
+        type: "single",
+        options: [
+          "Sort small sub-arrays using Insertion Sort instead of Quick Sort",
+          "Increase the number of recursive calls to the sorting function",
+          "Use a stable sorting algorithm instead of Quick Sort",
+          "none of the other choices",
+          "Use randomized or median-of-three pivot selection",
+        ],
+        correctAnswer: "Use randomized or median-of-three pivot selection",
+      },
+      {
+        id: 8,
+        question: "Bubble Sort is a sorting algorithm that:",
+        type: "single",
+        options: [
+          "Is often the default sort routine in many programming languages",
+          "Is one of the fastest sorts",
+          "none of the other choices",
+          "Swaps adjacent elements that are out of order",
+          "Always has a worst-case time complexity of O(n log n)",
+        ],
+        correctAnswer: "Swaps adjacent elements that are out of order",
+      },
+      {
+        id: 9,
+        question: "What is the worst-case time complexity of Merge Sort?",
+        type: "single",
+        options: [
+          "O(1)",
+          "O(n)",
+          "O(n log n)",
+          "O(n²)",
+          "none of the other choices",
+        ],
+        correctAnswer: "O(n log n)",
+      },
+      {
+        id: 10,
+        question:
+          "When selecting the median of three to use as the pivot in Quick Sort, the three elements should be chosen:",
+        type: "single",
+        options: [
+          "From the middle and two adjacent elements in the partition",
+          "none of the other choices",
+          "Randomly from the partition",
+          "From the beginning, middle, and end of the partition",
+          "From the largest, smallest, and middle values in the partition",
+        ],
+        correctAnswer: "From the beginning, middle, and end of the partition",
+      },
+      {
+        id: 11,
+        question:
+          "Insertion Sort is generally considered an efficient sorting algorithm when:",
+        type: "single",
+        options: [
+          "The input array is very large",
+          "none of the other choices",
+          "The input array is reverse sorted",
+          "The input array contains a lot of duplicate elements",
+          "The input array is partially sorted or nearly sorted",
+        ],
+        correctAnswer: "The input array is partially sorted or nearly sorted",
+      },
+      {
+        id: 12,
+        question: "Insertion Sort is a sorting algorithm that:",
+        type: "single",
+        options: [
+          "Always has a worst-case time complexity of O(n log n)",
+          "Is an in-place sorting algorithm",
+          "none of the other choices",
+          "Builds the final sorted array one item at a time by inserting each unsorted element into its proper place",
+          "Is a stable sorting algorithm",
+        ],
+        correctAnswer:
+          "Builds the final sorted array one item at a time by inserting each unsorted element into its proper place",
+      },
+      {
+        id: 13,
+        question: "In-place sorting algorithms are useful in situations where:",
+        type: "single",
+        options: [
+          "The input array is already sorted",
+          "The input array is very large",
+          "Memory usage is limited",
+          "none of the other choices",
+          "The input array is very small",
+        ],
+        correctAnswer: "Memory usage is limited",
+      },
+      {
+        id: 14,
+        question:
+          "When would you choose a stable sorting algorithm over an unstable sorting algorithm?",
+        type: "single",
+        options: [
+          "When you need to sort data in parallel",
+          "When you need to sort data in reverse order",
+          "none of the other choices",
+          "When you need to sort large data sets quickly",
+          "When you need to maintain the relative order of equal elements in the sorted output",
+        ],
+        correctAnswer:
+          "When you need to maintain the relative order of equal elements in the sorted output",
+      },
+      {
+        id: 15,
+        question: "Quick Sort is a sorting algorithm that:",
+        type: "single",
+        options: [
+          "none of the other choices",
+          "Always has a worst-case time complexity of O(n log n)",
+          "Is an in-place sorting algorithm",
+          "Is based on the Divide and Conquer paradigm and partitions the input array into smaller sub-arrays to sort",
+          "Is a stable sorting algorithm",
+        ],
+        correctAnswer:
+          "Is based on the Divide and Conquer paradigm and partitions the input array into smaller sub-arrays to sort",
+      },
+      {
+        id: 16,
+        question:
+          "Which of the following sorting algorithms is NOT a stable sorting algorithm?",
+        type: "single",
+        options: [
+          "Bubble Sort",
+          "Quick Sort",
+          "none of the other choices",
+          "Merge Sort",
+        ],
+        correctAnswer: "Quick Sort",
+      },
+      {
+        id: 17,
+        question: "Shell Sort is a sorting algorithm that:",
+        type: "single",
+        options: [
+          "Always has a worst-case time complexity of O(n log n)",
+          "Is based on the Insertion Sort algorithm but divides the input array into smaller subarrays before sorting",
+          "none of the other choices",
+          "Is rarely used because it has a strange name",
+        ],
+        correctAnswer:
+          "Is based on the Insertion Sort algorithm but divides the input array into smaller subarrays before sorting",
+      },
+      {
+        id: 18,
+        question: "What is the worst-case time complexity of Bubble Sort?",
+        type: "single",
+        options: [
+          "O(n)",
+          "none of the other choices",
+          "O(1)",
+          "O(n log n)",
+          "O(n²)",
+        ],
+        correctAnswer: "O(n²)",
+      },
+      {
+        id: 19,
+        question:
+          "Selection Sort is generally not considered an efficient sorting algorithm because:",
+        type: "single",
+        options: [
+          "It always takes O(n²) space to sort an array",
+          "It requires extra memory to store intermediate results",
+          "It is slow even for small arrays",
+          "none of the other choices",
+          "It is not a stable sorting algorithm",
+        ],
+        correctAnswer: "It is slow even for small arrays",
+      },
+      {
+        id: 20,
+        question:
+          "In Quick Sort, selecting the pivot element as the median of three randomly chosen elements in the array can help to:",
+        type: "single",
+        options: [
+          "Guarantee that the algorithm will sort the array in descending order",
+          "Ensure that the pivot element is always the largest element in the array",
+          "Avoid O(n²) worst-case time complexity scenarios",
+          "Reduce the memory usage of the algorithm",
+          "none of the other choices",
+        ],
+        correctAnswer: "Avoid O(n²) worst-case time complexity scenarios",
+      },
+      {
+        id: 21,
+        question:
+          "Which of the following sorting algorithms has a worst-case time complexity of O(n log n)?",
+        type: "single",
+        options: [
+          "Bogo Sort",
+          "Selection Sort",
+          "Heap Sort",
+          "Stooge Sort",
+          "none of the other choices",
+        ],
+        correctAnswer: "Heap Sort",
+      },
+      {
+        id: 22,
+        question:
+          "What is a disadvantage of Quick Sort compared to other sorting algorithms?",
+        type: "single",
+        options: [
+          "It is not an in-place sorting algorithm",
+          "none of the other choices",
+          "It requires additional memory proportional to the size of the input array",
+          "It may have a worst-case time complexity of O(n²) if the input array is already sorted or nearly sorted",
+          "It is not suitable for large datasets",
+        ],
+        correctAnswer:
+          "It may have a worst-case time complexity of O(n²) if the input array is already sorted or nearly sorted",
+      },
+      {
+        id: 23,
+        question:
+          "Which of the following sorting algorithms is an in-place sorting algorithm?",
+        type: "single",
+        options: [
+          "Radix Sort",
+          "Merge Sort",
+          "Quick Sort",
+          "Counting Sort",
+          "none of the other choices",
+        ],
+        correctAnswer: "Quick Sort",
+      },
+      {
+        id: 24,
+        question:
+          "Merge Sort is generally preferred over other sorting algorithms when:",
+        type: "single",
+        options: [
+          "The input array contains many duplicate elements",
+          "none of the other choices",
+          "The input array is already sorted",
+          "The input array is partially sorted or nearly sorted",
+          "Teaching CS students about recursion",
+        ],
+        correctAnswer: "Teaching CS students about recursion",
+      },
+      {
+        id: 25,
+        question: "What is the worst-case time complexity of Bubble Sort?",
+        type: "single",
+        options: [
+          "O(n²)",
+          "none of the other choices",
+          "O(n log n)",
+          "O(1)",
+          "O(n)",
+        ],
+        correctAnswer: "O(n²)",
+      },
+    ],
+  },
+  {
+    id: "week8",
+    title: "Week 8: Graphs",
+    description: "Graph theory, representations, and algorithms",
+    questions: [
+      {
+        id: 1,
+        question:
+          "Which of the following scenario(s) best exemplify(ies) the application of Topological Sort?",
+        type: "multiple",
+        options: [
+          "Routing wire in a house",
+          "none of the other choices",
+          "Playing two-player chess",
+          "Prerequisite course selection",
+          "Pancake preparation",
+          "Module coding and testing",
+        ],
+        correctAnswer: [
+          "Prerequisite course selection",
+          "Pancake preparation",
+          "Module coding and testing",
+        ],
+      },
+      {
+        id: 2,
+        question:
+          "When is it better to use an Adjacency Matrix representation rather than an Adjacency List representation to represent a graph?",
+        type: "single",
+        options: [
+          "When the graph has a small number of vertices.",
+          "none of the other choices",
+          "When the graph is sparse and has relatively few edges.",
+          "When efficient edge traversal is a primary concern.",
+          "When the graph is dense and has many edges.",
+        ],
+        correctAnswer: "When the graph is dense and has many edges.",
+      },
+      {
+        id: 3,
+        question:
+          "A fundamental part of a graph, also called a node, may have a name called the 'key,' and other information called the 'payload' is more commonly called what?",
+        type: "single",
+        options: [
+          "none of the other choices",
+          "Weight",
+          "Vertex",
+          "Edge",
+          "Path",
+          "Cycle",
+        ],
+        correctAnswer: "Vertex",
+      },
+      {
+        id: 4,
+        question:
+          "Kruskal's algorithm for minimum spanning tree requires an efficient Disjoint Set data structure. What does it use this for?",
+        type: "single",
+        options: [
+          "To keep track of visited vertices during traversal.",
+          "To determine the order in which edges are added to the spanning tree.",
+          "To calculate the weights of the edges in the graph.",
+          "To detect and prevent cycles in the graph.",
+          "To allow adding an edge that joins two currently disconnected subtrees together",
+        ],
+        correctAnswer:
+          "To allow adding an edge that joins two currently disconnected subtrees together",
+      },
+      {
+        id: 5,
+        question: "Which of the following can be viewed as a graph problem?",
+        type: "multiple",
+        options: [
+          "planning which courses to take and the order to take them in to complete a CS major",
+          "scheduling all airline flights from airport to airport across the globe",
+          "scheduling university courses to time slots and rooms for a given term so as to allow students to take courses they are likely to need to take together",
+          "using a GPS to navigate driving directions from your current location to the closest airport",
+          "two player chess",
+          "routing wire in a house to deliver electricity to each outlet using minimum amount of wire",
+        ],
+        correctAnswer: [
+          "planning which courses to take and the order to take them in to complete a CS major",
+          "scheduling all airline flights from airport to airport across the globe",
+          "scheduling university courses to time slots and rooms for a given term so as to allow students to take courses they are likely to need to take together",
+          "using a GPS to navigate driving directions from your current location to the closest airport",
+          "two player chess",
+          "routing wire in a house to deliver electricity to each outlet using minimum amount of wire",
+        ],
+      },
+      {
+        id: 6,
+        question:
+          "When is it better to use an Adjacency List representation rather than an Adjacency Matrix representation to represent a graph?",
+        type: "single",
+        options: [
+          "When the graph is dense and has many edges.",
+          "When the graph has a small number of vertices.",
+          "When efficient edge traversal is a primary concern.",
+          "none of the other choices",
+          "When the graph is sparse and has relatively few edges.",
+        ],
+        correctAnswer: "When the graph is sparse and has relatively few edges.",
+      },
+      {
+        id: 7,
+        question:
+          "What is the name for a sequence of vertices that are connected by edges?",
+        type: "single",
+        options: [
+          "Weight",
+          "Path",
+          "none of the other choices",
+          "Cycle",
+          "Vertex",
+          "Edge",
+        ],
+        correctAnswer: "Path",
+      },
+      {
+        id: 8,
+        question:
+          "What is a value that represents the cost to travel from one graph node to another?",
+        type: "single",
+        options: [
+          "Weight",
+          "Edge",
+          "Cycle",
+          "Path",
+          "none of the other choices",
+          "Vertex",
+        ],
+        correctAnswer: "Weight",
+      },
+      {
+        id: 9,
+        question:
+          "What connects two nodes to show that there is a relationship between them and may have a cost associated with it?",
+        type: "single",
+        options: [
+          "Path",
+          "Cycle",
+          "Edge",
+          "Vertex",
+          "none of the other choices",
+          "Weight",
+        ],
+        correctAnswer: "Edge",
+      },
+      {
+        id: 10,
+        question:
+          "What is a name for a path in a graph that starts and ends at the same vertex?",
+        type: "single",
+        options: [
+          "Vertex",
+          "Edge",
+          "Path",
+          "none of the other choices",
+          "Cycle",
+          "Weight",
+        ],
+        correctAnswer: "Cycle",
+      },
+    ],
+  },
+  {
+    id: "week9",
+    title: "Week 9: Dijkstra's and Prim's Algorithms",
+    description: "Shortest paths, minimum spanning trees, and priority queues",
+    questions: [
+      {
+        id: 1,
+        question:
+          "Based on the given analysis, what is the worst-case time complexity of Dijkstra's algorithm?",
+        type: "single",
+        options: [
+          "none of the other choices",
+          "O(n²)",
+          "O(n log n)",
+          "O(n)",
+          "O(1)",
+        ],
+        correctAnswer: "O(n²)",
+      },
+      {
+        id: 2,
+        question:
+          "What is the time complexity for building the min-heap priority queue in Dijkstra's algorithm where n is the number of vertices?",
+        type: "single",
+        options: ["O(n)", "O(1)", "O(log n)", "O(n log n)"],
+        correctAnswer: "O(n log n)",
+      },
+      {
+        id: 3,
+        question:
+          "What is the time complexity for each call to decreaseKey in Dijkstra's algorithm?",
+        type: "single",
+        options: ["O(n)", "O(n log n)", "O(log n)", "O(1)"],
+        correctAnswer: "O(log n)",
+      },
+      {
+        id: 4,
+        question:
+          "Which data structure is used to control the order of vertices in Dijkstra's algorithm?",
+        type: "single",
+        options: [
+          "none of the other choices",
+          "Linked List",
+          "Queue",
+          "Stack",
+          "Binary Heap Priority Queue",
+        ],
+        correctAnswer: "Binary Heap Priority Queue",
+      },
+      {
+        id: 5,
+        question:
+          "What is the time complexity for each call to delMin in Dijkstra's algorithm?",
+        type: "single",
+        options: [
+          "O(1)",
+          "O(n log n)",
+          "O(log n)",
+          "O(n)",
+          "none of the other choices",
+        ],
+        correctAnswer: "O(log n)",
+      },
+      {
+        id: 6,
+        question:
+          "How many times is the while loop executed in Dijkstra's algorithm?",
+        type: "single",
+        options: [
+          "log n times",
+          "Once",
+          "n times",
+          "none of the other choices",
+          "n log n times",
+        ],
+        correctAnswer: "n times",
+      },
+      {
+        id: 7,
+        question:
+          "What determines the priority of vertices in the priority queue used in Dijkstra's algorithm?",
+        type: "single",
+        options: [
+          "The distance to the vertex.",
+          "The order in which the vertices were added to the graph.",
+          "The weight of the vertex.",
+          "The number of connections a vertex has.",
+          "none of the other choices",
+        ],
+        correctAnswer: "The distance to the vertex.",
+      },
+      {
+        id: 8,
+        question:
+          "What is the key step in Prim's algorithm to find an edge that is safe to add to the tree?",
+        type: "single",
+        options: [
+          "Finding the edge with the highest weight",
+          "Finding the longest edge",
+          "Finding the shortest edge",
+          "Finding the edge with the lowest weight",
+          "none of the other choices",
+        ],
+        correctAnswer: "Finding the edge with the lowest weight",
+      },
+      {
+        id: 9,
+        question:
+          "Which algorithm(s) is(are) used to construct a minimum weight spanning tree for a graph?",
+        type: "multiple",
+        options: [
+          "Bellman-Ford algorithm",
+          "Prim's algorithm",
+          "Kruskal's algorithm",
+          "none of the other choices",
+          "Dijkstra's algorithm",
+        ],
+        correctAnswer: ["Prim's algorithm", "Kruskal's algorithm"],
+      },
+      {
+        id: 10,
+        question:
+          "Why is Dijkstra's algorithm not commonly used for routing messages through the Internet?",
+        type: "single",
+        options: [
+          "It only works for undirected graphs.",
+          "It is too slow for large-scale networks.",
+          "It requires a complete representation of the graph, which is impractical for network routers.",
+          "It cannot handle negative weights in the graph.",
+          "none of the other choices",
+        ],
+        correctAnswer:
+          "It requires a complete representation of the graph, which is impractical for network routers.",
+      },
+      {
+        id: 11,
+        question:
+          "What data structure is used in Prim's algorithm to select the next vertex to add to the growing graph?",
+        type: "single",
+        options: [
+          "Queue",
+          "Stack",
+          "none of the other choices",
+          "Set",
+          "Priority queue",
+        ],
+        correctAnswer: "Priority queue",
+      },
+      {
+        id: 12,
+        question: "What is the definition of a minimum spanning tree?",
+        type: "single",
+        options: [
+          "tree with the maximum weight of edges",
+          "none of the other choices",
+          "tree with the minimum number of edges",
+          "A tree that connects all the vertices in a graph",
+          "tree that includes all the vertices and minimizes the sum of edge weights",
+        ],
+        correctAnswer:
+          "tree that includes all the vertices and minimizes the sum of edge weights",
+      },
+      {
+        id: 13,
+        question:
+          "What is the time complexity for the for loop in Dijkstra's algorithm?",
+        type: "single",
+        options: [
+          "none of the other choices",
+          "O(1)",
+          "O(n log n)",
+          "O(log n)",
+          "O(n)",
+        ],
+        correctAnswer: "O(n)",
+      },
+      {
+        id: 14,
+        question:
+          "What is the importance of updating the predecessor links in Prim's algorithm?",
+        type: "single",
+        options: [
+          "It ensures message delivery to all listeners.",
+          "It prevents cycles in the spanning tree.",
+          "none of the other choices",
+          "It reduces the number of unnecessary messages.",
+          "It speeds up the algorithm's execution.",
+        ],
+        correctAnswer: "It prevents cycles in the spanning tree.",
+      },
+      {
+        id: 15,
+        question: "What is the main purpose of Dijkstra's algorithm?",
+        type: "single",
+        options: [
+          "To determine the shortest path between any two vertices in a graph.",
+          "none of the other choices",
+          "To determine the average path length in a graph.",
+          "To determine the longest path in a graph.",
+          "To determine the shortest path from a single starting vertex to all other vertices in a graph.",
+        ],
+        correctAnswer:
+          "To determine the shortest path from a single starting vertex to all other vertices in a graph.",
+      },
+      {
+        id: 16,
+        question:
+          "Which of the following best describes the purpose of the priority queue in Dijkstra's algorithm?",
+        type: "single",
+        options: [
+          "To keep track of visited vertices.",
+          "To store all the vertices in the graph.",
+          "To determine the order in which vertices are explored.",
+          "To store the distances between vertices.",
+          "none of the other choices",
+        ],
+        correctAnswer: "To determine the order in which vertices are explored.",
+      },
+      {
+        id: 17,
+        question:
+          "In Dijkstra's algorithm, what does the 'dist' variable in the Vertex class represent?",
+        type: "single",
+        options: [
+          "The distance between the vertex and its nearest neighbor vertex.",
+          "The number of times the vertex has been visited.",
+          "none of the other choices",
+          "The sum total of the edge weights from the start vertex to that vertex.",
+          "The number of connections the vertex has.",
+        ],
+        correctAnswer:
+          "The sum total of the edge weights from the start vertex to that vertex.",
+      },
+      {
+        id: 18,
+        question:
+          "What is the purpose of the 'decreaseKey' method in Dijkstra's algorithm?",
+        type: "single",
+        options: [
+          "To update the position of a vertex in the priority queue because its distance has changed.",
+          "none of the other choices",
+          "To add a new vertex to the priority queue.",
+          "To remove a vertex from the priority queue.",
+          "To increase the distance to a vertex in the priority queue.",
+        ],
+        correctAnswer:
+          "To update the position of a vertex in the priority queue because its distance has changed.",
+      },
+      {
+        id: 19,
+        question:
+          "What happens if a negative weight is introduced to one of the edges in the graph in Dijkstra's algorithm?",
+        type: "single",
+        options: [
+          "The algorithm continues running normally.",
+          "The algorithm never exits.",
+          "none of the other choices",
+          "The algorithm exits immediately.",
+        ],
+        correctAnswer: "The algorithm continues running normally.",
+      },
+      {
+        id: 20,
+        question:
+          "What is the overall time complexity for the combined running time of Dijkstra's algorithm, based on the given analysis?",
+        type: "single",
+        options: [
+          "O(n² log n)",
+          "O(n²)",
+          "none of the other choices",
+          "O(n)",
+          "O(n log n)",
+        ],
+        correctAnswer: "O(n²)",
+      },
+    ],
+  },
 ];
